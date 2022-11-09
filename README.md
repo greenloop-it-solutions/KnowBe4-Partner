@@ -75,7 +75,7 @@ Set-KB4ClientContext -AccountOwnerId $ownerId
 
 Once signed in, all commands will execute in the current client context.
 
-To change the client context you can run a new search or disconnect the client session manually:
+To change the client context, run a new search or disconnect the client session manually:
 
 ```powershell
 Disconnect-KB4ClientSession
