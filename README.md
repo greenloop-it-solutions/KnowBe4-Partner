@@ -24,7 +24,6 @@
 
 </div>
 
-
 <!-- REPORT & REQUEST -->
 <p align="center">
 <a href="https://github.com/greenloop-it-solutions/KnowBe4-Partner/issues">Report Bug</a>
@@ -36,7 +35,6 @@
 ## About
 
 The KnowBe4 Partner module was created to interact with undocumented API/GraphQL calls to streamline and automate processes. This module is in no way complete and is currently `in progress`!
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -51,7 +49,6 @@ The [PS-SAML-Interactive](https://github.com/allynl93/PS-SAML-Interactive) modul
 Install-Module -Name 'KnowBe4-Partner'
 ```
 
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -60,6 +57,31 @@ Run the initial connect command:
 ```powershell
 Connect-KB4PartnerAccount -EmailAddress 'kb4admin@contoso.com'
 ```
+
+Request all managed accounts or search for a specific client:
+
+```powershell
+$result = Get-KB4ManagedAccount -Search 'Initech'
+$ownerId = $result.accounts.nodes.accountOwner.id
+```
+
+Currently, this returns a nested object that contains an important Id: `accountOwner` > `id`.
+
+You will need this Id to sign into a client account:
+
+```powershell
+Set-KB4ClientContext -AccountOwnerId $ownerId
+```
+
+Once signed in, all commands will execute in the current client context.
+
+To change the client context you can run a new search or disconnect the client session manually:
+
+```powershell
+Disconnect-KB4ClientSession
+```
+
+There's probably a better way to handle this but for now, either option will work.
 
 _For a complete list of commands, please refer to the [documentation](https://github.com/greenloop-it-solutions/KnowBe4-Partner/blob/master/KnowBe4-Partner.md)_.
 
@@ -93,6 +115,7 @@ $trainingCampaign = @{
 
 New-KB4TrainingCampaign @trainingCampaign
 ```
+
 ## Example 2
 
 Create a phishing campaign:
