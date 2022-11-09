@@ -30,10 +30,10 @@ CompanyName = 'GreenLoop IT Solutions'
 Copyright = '(c) Terry Wilson. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'A PowerShell Module for the KnowBe4 Partner Portal'
 
 # Minimum version of the PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '5.1'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
@@ -118,7 +118,7 @@ PrivateData = @{
         Tags = @('KnowBe4', 'API', 'Security Awareness Training', 'SAT')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/greenloop-it-solutions/KnowBe4-Partner/blob/main/LICENSE'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/greenloop-it-solutions/KnowBe4-Partner'
