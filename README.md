@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/greenloop-it-solutions/KnowBe4-Partner">
-    <img src="Images/KB4-Logo.svg" alt="Logo" width="600" height="200">
+    <img src="Images/KB4-logo.svg" alt="Logo" width="600" height="200">
   </a>
 
 <h2 align="center">KnowBe4 Partner</h2>
