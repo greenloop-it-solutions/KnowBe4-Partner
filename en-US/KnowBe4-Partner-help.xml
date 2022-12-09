@@ -105,7 +105,7 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
           <maml:name>RescheduleOffset</maml:name>
           <maml:description>
-            <maml:para>Sets the amount of days to send a reocurring reminder. Example: resend a reminder every 3 days.</maml:para>
+            <maml:para>Sets the amount of days to send a recurring reminder. Example: resend a reminder every 3 days.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
@@ -279,7 +279,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
         <maml:name>RescheduleOffset</maml:name>
         <maml:description>
-          <maml:para>Sets the amount of days to send a reocurring reminder. Example: resend a reminder every 3 days.</maml:para>
+          <maml:para>Sets the amount of days to send a recurring reminder. Example: resend a reminder every 3 days.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -347,7 +347,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Connects to the KnowBe4 Partner Account portal using Single Sign-On only.</maml:para>
+      <maml:para>Connects to the KnowBe4 Partner Account portal using SAML Single Sign-On authentication.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -410,7 +410,7 @@
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>Connect-KB4PartnerAccount -EmailAddress 'kb4admin@contoso.com'</dev:code>
         <dev:remarks>
-          <maml:para>This command connects and authenticates to the KnowBe4 Partner portal using Single Sign-On.</maml:para>
+          <maml:para>This command connects and authenticates to the KnowBe4 Partner.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -3604,7 +3604,7 @@ New-KB4TrainingCampaign @trainingCampaign</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Set-KB4ClientContext</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="Id">
           <maml:name>AccountOwnerId</maml:name>
           <maml:description>
             <maml:para>The Id of the account owner. This Id is authorized to sign into the managed account.</maml:para>
@@ -3620,7 +3620,7 @@ New-KB4TrainingCampaign @trainingCampaign</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="Id">
         <maml:name>AccountOwnerId</maml:name>
         <maml:description>
           <maml:para>The Id of the account owner. This Id is authorized to sign into the managed account.</maml:para>

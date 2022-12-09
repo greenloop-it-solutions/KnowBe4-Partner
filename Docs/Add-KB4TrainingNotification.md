@@ -187,7 +187,7 @@ Accept wildcard characters: False
 
 ### -RescheduleOffset
 
-Sets the amount of days to send a reocurring reminder.
+Sets the amount of days to send a recurring reminder.
 Example: resend a reminder every 3 days.
 
 ```yaml
