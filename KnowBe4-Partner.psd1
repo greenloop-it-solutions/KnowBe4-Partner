@@ -12,7 +12,7 @@
 RootModule = '.\KnowBe4-Partner.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.2'
+ModuleVersion = '0.1.3'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Desktop', 'Core'
@@ -88,7 +88,9 @@ FunctionsToExport = @(
     'Get-KB4PhishingCampaign',
     'Get-KB4PhishingCampaignForm',
     'Set-KB4ShowHidePhishingDomain',
-    'Set-KB4ClientContext'
+    'Set-KB4ClientContext',
+    'Close-KB4TrainingCampaign',
+    'Close-KB4PhishingCampaign'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.

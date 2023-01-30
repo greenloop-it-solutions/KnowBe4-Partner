@@ -18,6 +18,14 @@ Commands to interact with the KnowBe4 Partner module.
 
 Adds a training notification to an existing campaign.
 
+### [Close-KB4PhishingCampaign](Docs/Close-KB4PhishingCampaign.md)
+
+Deactivates (closes) a phishing campaign.
+
+### [Close-KB4TrainingCampaign](Docs/Close-KB4TrainingCampaign.md)
+
+Closes a training campaign.
+
 ### [Connect-KB4PartnerAccount](Docs/Connect-KB4PartnerAccount.md)
 
 Connects to the KnowBe4 Partner Account portal.
