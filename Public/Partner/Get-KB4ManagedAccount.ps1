@@ -11,6 +11,10 @@ function Get-KB4ManagedAccount {
         [string]$Search,
 
         [Parameter(Mandatory = $false)]
+        [ValidateSet('true', 'false')]
+        [string]$ArchivedUsers = 'false',
+
+        [Parameter(Mandatory = $false)]
         [ValidateSet('ALL', 'ACTIVE', 'ARCHIVED')]
         [string]$Status = 'ALL',
 
@@ -31,7 +35,7 @@ function Get-KB4ManagedAccount {
         [string]$OtherPartnersAccounts = 'ALL'
     )
 
-    $query = "{`"query`":`"query Accounts(`$per: Int!, `$page: Int!, `$partnerId: Int, `$status: AccountStatuses, `$billingType: AccountBillingTypes, `$search: String, `$sortField: AccountSortFields, `$sortDirection: SortDirections, `$otherPartnersAccounts: AccountPartnerInclusions) {\n  accounts(\n    per: `$per\n    page: `$page\n    partnerId: `$partnerId\n    status: `$status\n    billingType: `$billingType\n    search: `$search\n    sortField: `$sortField\n    sortDirection: `$sortDirection\n    otherPartnersAccounts: `$otherPartnersAccounts\n  ) {\n    nodes {\n      id\n      accountSettingsFlagNames\n      archived\n      billingType\n      pstCount\n      companyName\n      purchasedCourseCount\n      createdAt\n      domain\n      hasFreePst\n      hasFreePrt\n      hasFreeSpt\n      hasFreeUsb\n      numberOfSeats\n      userCount\n      partnerAccessExpiration\n      percentageUsersPhished\n      percentageUsersTrained\n      phishPronePercentage\n      latestRiskScore\n      subscriptionEndDate\n      resellerId\n      partnerEmail\n      partnerDisplayName\n      accountOwner {\n        id\n        confirmedAt\n      }\n      subscriptionObject {\n        id\n        friendlyName\n      }\n      purchasedSkus {\n        skuCode\n      }\n      languageSettings {\n        adminLocale\n      }\n    }\n    pagination {\n      pages\n      page\n      per\n      totalCount\n    }\n  }\n}\n`",`"variables`":{`"per`":$Per,`"page`":$Page,`"search`":`"$Search`",`"status`":`"$Status`",`"billingType`":`"$BillingType`",`"sortField`":`"$SortField`",`"sortDirection`":`"$SortDirection`",`"otherPartnersAccounts`":`"$OtherPartnersAccounts`"}}"
+    $query = "{`"query`":`"query Accounts(`$per: Int!, `$page: Int!, `$partnerId: Int, `$status: AccountStatuses, `$billingType: AccountBillingTypes, `$search: String, `$archivedUsers: Boolean, `$sortField: AccountSortFields, `$sortDirection: SortDirections, `$otherPartnersAccounts: AccountPartnerInclusions) {\n  accounts(\n    per: `$per\n    page: `$page\n    partnerId: `$partnerId\n    status: `$status\n    billingType: `$billingType\n    search: `$search\n    archivedUsers: `$archivedUsers\n    sortField: `$sortField\n    sortDirection: `$sortDirection\n    otherPartnersAccounts: `$otherPartnersAccounts\n  ) {\n    nodes {\n      id\n      accountSettingsFlagNames\n      archived\n      billingType\n      pstCount\n      companyName\n      purchasedCourseCount\n      createdAt\n      domain\n      hasFreePst\n      hasFreePrt\n      hasFreeSpt\n      hasFreeQrt\n      hasFreeUsb\n      numberOfSeats\n      userCount\n      partnerAccessExpiration\n      percentageUsersPhished\n      percentageUsersTrained\n      phishPronePercentage\n      latestRiskScore\n      subscriptionEndDate\n      partnerId\n      partnerDomain\n      partnerDisplayName\n      accountOwner {\n        id\n        confirmedAt\n      }\n      subscriptionObject {\n        id\n        friendlyName\n      }\n      purchasedSkus {\n        skuCode\n        status\n      }\n      languageSettings {\n        adminLocale\n      }\n    }\n    pagination {\n      pages\n      page\n      per\n      totalCount\n    }\n  }\n}\n`",`"variables`":{`"per`":$Per,`"page`":$Page,`"search`":`"$Search`",`"archivedUsers`":$ArchivedUsers,`"status`":`"$Status`",`"billingType`":`"$BillingType`",`"sortField`":`"$SortField`",`"sortDirection`":`"$SortDirection`",`"otherPartnersAccounts`":`"$OtherPartnersAccounts`"}}"
 
     Invoke-KB4WebRequest -Query $query
 }
