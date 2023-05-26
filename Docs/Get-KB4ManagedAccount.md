@@ -14,8 +14,8 @@ Returns all managed accounts.
 ## SYNTAX
 
 ```powershell
-Get-KB4ManagedAccount [[-Per] <Int32>] [[-Page] <Int32>] [[-Search] <String>] [[-Status] <String>]
- [[-BillingType] <String>] [[-SortField] <String>] [[-SortDirection] <String>]
+Get-KB4ManagedAccount [[-Per] <Int32>] [[-Page] <Int32>] [[-Search] <String>] [-ArchivedUsers <String>]
+ [[-Status] <String>] [[-BillingType] <String>] [[-SortField] <String>] [[-SortDirection] <String>]
  [[-OtherPartnersAccounts] <String>] [<CommonParameters>]
 ```
 
@@ -164,6 +164,22 @@ Accepted values: ALL, ACTIVE, ARCHIVED
 
 Required: False
 Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ArchivedUsers
+
+Include archived users.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
