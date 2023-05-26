@@ -909,8 +909,12 @@
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ArchivedUsers</maml:name>
           <maml:description>
-            <maml:para>Include archived users.</maml:para>
+            <maml:para>Include archived users. Default is `false`.</maml:para>
           </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">true</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">false</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
             <maml:name>String</maml:name>
@@ -1020,7 +1024,7 @@
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ArchivedUsers</maml:name>
         <maml:description>
-          <maml:para>Include archived users.</maml:para>
+          <maml:para>Include archived users. Default is `false`.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>

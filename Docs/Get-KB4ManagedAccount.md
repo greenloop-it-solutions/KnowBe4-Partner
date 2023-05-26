@@ -171,12 +171,13 @@ Accept wildcard characters: False
 
 ### -ArchivedUsers
 
-Include archived users.
+Include archived users. Default is `false`.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
+Accepted values: true, false
 
 Required: False
 Position: Named
